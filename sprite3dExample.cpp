@@ -11,14 +11,14 @@ int main()
 
 	// load resources (textures and font)
 	sf::Texture texture, backTexture;
-	if (!texture.loadFromFile("G:/Resource Pool/images/misc/uv map 1.jpg") ||
-		!backTexture.loadFromFile("G:/Resource Pool/images/misc/uv map 1 (inv).jpg"))
+	if (!texture.loadFromFile("uv map 1.jpg") ||
+		!backTexture.loadFromFile("uv map 1 (inv).jpg"))
 	{
 		std::cerr << "Error loading textures." << std::endl;
 		return EXIT_FAILURE; // textures are required for this example. it's pointless carrying on without them
 	}
 	sf::Font font;
-	if (!font.loadFromFile("G:/Resource Pool/fonts/arial.ttf"))
+	if (!font.loadFromFile("arial.ttf"))
 		std::cerr << "Error loading font." << std::endl; // no need to exit if font fails; it will just not show any text
 
 	// text headers
