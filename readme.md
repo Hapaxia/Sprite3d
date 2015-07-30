@@ -16,7 +16,7 @@ Click this image to see a video that shows what the provided example produces:
 Note that the texture is still subject to the same mapping problems evident in [SpinningCard](https://github.com/Hapaxia/SpinningCard) where it shows that distorting a quad doesn't interpolate the texture correctly.
 As in [SpinningCard](https://github.com/Hapaxia/SpinningCard), this object is, instead of being created using a quad (or two triangles), created using a triangle fan that uses either four or eight (can be chosen) triangles to display to quad. This helps keep certain areas (centre point and centre of edges or just centre point) of the texture in the correct place but still does not distort the texture perfectly.
 
-The texture distortions are more visible depending on the apparent depth of the 3D effect. This amount can be changed. It's called shallowness: the higher the value, the less depth but with less visible texture distortion, whereas the lower the value, the greater the depth but with more visible texture distortion.
+The texture distortions are more visible depending on the apparent depth of the 3D effect. This amount can be changed by setting its **depth**, which is a _float_. The higher the value, the greater the depth but with more visible texture distortion; the lower the value, the lessser the depth but with less visible texture distortion. The default depth value is 8 (this is approximately equal to the depth shown in the example video)
 
 This class is a work-in-progress and as such should not be considered complete or final. Some features of the standard sprite are currently missing such as setting custom texture rectangles and getting bounds.
 
@@ -24,6 +24,6 @@ Planned for the future is dynamic splitting of the sprite into multiple quads (t
 
 Due to this currently being unfinished, some of the interface should be expected to change ([that bool](Sprite3d.hpp#L52) will probably disappear, for example). However, the main interface should stay relatively stable since it's designed to be used in the same way that SFML's standard Sprite is used.
 
-The class will be posted to the [SFML Forum's project forum](http://en.sfml-dev.org/forums/index.php?board=10.0) or the [SFML Forum's wiki forum](http://en.sfml-dev.org/forums/index.php?board=11.0) at a later time.
+There is a [thread dedicated to this class](http://en.sfml-dev.org/forums/index.php?topic=18698) on the SFML wiki forum.
 
 [Hapax's SFML Forum profile](http://en.sfml-dev.org/forums/index.php?action=profile;u=13086)
