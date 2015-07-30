@@ -11,14 +11,14 @@ int main()
 
 	// load resources (textures and font)
 	sf::Texture texture, backTexture;
-	if (!texture.loadFromFile("uv map 1.jpg") ||
-		!backTexture.loadFromFile("uv map 1 (inv).jpg"))
+	if (!texture.loadFromFile("resources/uv map 1.jpg") ||
+		!backTexture.loadFromFile("resources/uv map 1 (edit).jpg"))
 	{
 		std::cerr << "Error loading textures." << std::endl;
 		return EXIT_FAILURE; // textures are required for this example. it's pointless carrying on without them
 	}
 	sf::Font font;
-	if (!font.loadFromFile("arial.ttf"))
+	if (!font.loadFromFile("resources/arial.ttf"))
 		std::cerr << "Error loading font." << std::endl; // no need to exit if font fails; it will just not show any text
 
 	// text headers
@@ -29,11 +29,10 @@ int main()
 	sprite3dText.setPosition(sf::Vector2f(window.getSize().x * 0.25f, 0.f));
 	spriteText.setPosition(sf::Vector2f(window.getSize().x * 0.75f, 0.f));
 
-	// text shallowness value
-	sf::Text shallownessText("Shallowness: ", font, 24);
-	sprite3dText.setOrigin(sprite3dText.getLocalBounds().left + sprite3dText.getLocalBounds().width / 2.f, 0.f);
-	shallownessText.setOrigin(shallownessText.getLocalBounds().left, shallownessText.getLocalBounds().top + shallownessText.getLocalBounds().height);
-	shallownessText.setPosition(sf::Vector2f(0.f, window.getSize().y * 1.f));
+	// text depth value
+	sf::Text depthText("Shallowness: ", font, 24);
+	depthText.setOrigin(depthText.getLocalBounds().left, depthText.getLocalBounds().top + depthText.getLocalBounds().height);
+	depthText.setPosition(sf::Vector2f(0.f, window.getSize().y * 1.f));
 
 	// sprite3d
 	sf::Sprite3d sprite3d(texture, backTexture);
@@ -66,13 +65,11 @@ int main()
 					clock.restart();
 				}
 
-				// control shallowness
+				// control depth
 				else if (event.key.code == sf::Keyboard::Equal)
-					sprite3d.setShallowness(sprite3d.getShallowness() + 100.f);
+					sprite3d.setDepth(sprite3d.getDepth() + 1.f);
 				else if (event.key.code == sf::Keyboard::Dash)
-					sprite3d.setShallowness(sprite3d.getShallowness() - 100.f);
-				else if (event.key.code == sf::Keyboard::Return)
-					std::cout << "shallowness is currently: " << sprite3d.getShallowness() << std::endl;
+					sprite3d.setDepth(sprite3d.getDepth() - 1.f);
 			}
 		}
 
@@ -93,8 +90,8 @@ int main()
 		*/
 		//sprite3d.setYaw(time * 180.f);
 
-		// update shallowness text
-		shallownessText.setString("Shallowness: " + std::to_string(sprite3d.getShallowness()));
+		// update depth text
+		depthText.setString("Depth: " + std::to_string(sprite3d.getDepth()));
 
 		// update display
 		window.clear();
@@ -102,7 +99,7 @@ int main()
 		window.draw(sprite3d);
 		window.draw(spriteText);
 		window.draw(sprite3dText);
-		window.draw(shallownessText);
+		window.draw(depthText);
 		window.display();
 	}
 

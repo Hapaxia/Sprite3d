@@ -35,13 +35,15 @@ namespace sf
 Sprite3d::Sprite3d(const bool centralizeEdges) :
 m_compactTransformMatrix(5, 0.f),
 m_numberOfVertices(centralizeEdges ? 10u : 6u),
+m_depthToShallownessRatio(10000.f),
 m_points(m_numberOfVertices),
 m_vertices(m_numberOfVertices),
 m_pTexture(nullptr),
 m_pBackTexture(nullptr),
 m_pitch(0.f),
 m_yaw(0.f),
-m_shallowness(1200.f),
+m_depth(8.f),
+m_shallowness(m_depthToShallownessRatio / m_depth),
 m_center(),
 m_origin()
 {
@@ -50,13 +52,15 @@ m_origin()
 Sprite3d::Sprite3d(const sf::Texture& texture, const bool centralizeEdges) :
 m_compactTransformMatrix(5, 0.f),
 m_numberOfVertices(centralizeEdges ? 10u : 6u),
+m_depthToShallownessRatio(10000.f),
 m_points(m_numberOfVertices),
 m_vertices(m_numberOfVertices),
 m_pTexture(nullptr),
 m_pBackTexture(nullptr),
 m_pitch(0.f),
 m_yaw(0.f),
-m_shallowness(1200.f),
+m_depth(8.f),
+m_shallowness(m_depthToShallownessRatio / m_depth),
 m_center(),
 m_origin()
 {
@@ -66,13 +70,15 @@ m_origin()
 Sprite3d::Sprite3d(const sf::Texture& texture, const sf::Texture& backTexture, const bool centralizeEdges) :
 m_compactTransformMatrix(5, 0.f),
 m_numberOfVertices(centralizeEdges ? 10u : 6u),
+m_depthToShallownessRatio(10000.f),
 m_points(m_numberOfVertices),
 m_vertices(m_numberOfVertices),
 m_pTexture(nullptr),
 m_pBackTexture(nullptr),
 m_pitch(0.f),
 m_yaw(0.f),
-m_shallowness(1200.f),
+m_depth(8.f),
+m_shallowness(m_depthToShallownessRatio / m_depth),
 m_center(),
 m_origin()
 {
@@ -170,14 +176,15 @@ void Sprite3d::setRotation(sf::Vector3f rotation)
 	setRoll(rotation.z);
 }
 
-void Sprite3d::setShallowness(float shallowness)
+void Sprite3d::setDepth(const float depth)
 {
-	m_shallowness = shallowness;
+	m_depth = depth;
+	m_shallowness = m_depthToShallownessRatio / m_depth;
 }
 
-float Sprite3d::getShallowness() const
+float Sprite3d::getDepth() const
 {
-	return m_shallowness;
+	return m_depth;
 }
 
 const sf::Texture* Sprite3d::getTexture() const

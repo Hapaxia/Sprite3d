@@ -70,17 +70,20 @@ public:
 	void setRotation(sf::Vector3f rotation); // set pitch, yaw, and roll at once.
 
 	// 3D setup
-	// shallowness controls the apparent depth of the 3D effect.
-	// lower values give a more extreme effect but more visible texture distortion
-	// higher values give a more subtle effect but less visible texture distortion
-	void setShallowness(float shallowness); // default shallowness is 1200
-	float getShallowness() const;
+	// depth controls the amount of the apparent depth of the 3D effect.
+	// higher values give a more extreme depth effect but more visible texture distortion
+	// higher values give a more subtle depth effect but less visible texture distortion
+	void setDepth(float depth);
+	float getDepth() const;
 
 private:
 	const unsigned int m_numberOfVertices;
+
+	const float m_depthToShallownessRatio;
 	
 	float m_pitch;
 	float m_yaw;
+	float m_depth; // even though m_shallowness is the one that actually gets used internally, this is stored as a form of cache to return through getDepth() to avoid the unnecessary division in a getter
 	float m_shallowness;
 
 	const sf::Texture* m_pTexture;
