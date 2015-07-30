@@ -19,6 +19,8 @@ This class is a work-in-progress and as such should not be considered complete o
 
 Planned for the future is dynamic splitting of the sprite into multiple quads (triangle pair) to allow how accurate the texture will look by using more vertices.
 
-The class will be posted to the [SFML Forum's project forum](http://en.sfml-dev.org/forums/index.php?board=10.0) at a later time.
+Due to this currently being unfinished, some of the interface should be expected to change ([that bool](Sprite3d.hpp#L52) will probably disappear, for example). However, the main interface should stay relatively stable since it's designed to be used in the same way that SFML's standard Sprite is used.
+
+The class will be posted to the [SFML Forum's project forum](http://en.sfml-dev.org/forums/index.php?board=10.0) or the [SFML Forum's wiki forum](http://en.sfml-dev.org/forums/index.php?board=11.0) at a later time.
 
 [Hapax's SFML Forum profile](http://en.sfml-dev.org/forums/index.php?action=profile;u=13086)
