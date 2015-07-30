@@ -2,7 +2,7 @@
 *by Hapax (2015)*
 (http://github.com/Hapaxia)
 
-For use with [SFML](http://sfml-dev.org) (2).
+For use with [SFML](http://sfml-dev.org) (v2).
 
 Originally planned to be a part of the drawables module in the [Hx](http://github.com/hapaxia/Hx) library, this follow-up to [SpinningCard](https://github.com/Hapaxia/SpinningCard), which has been completely rewritten from scratch, has been re-routed to a life of independence!
 
