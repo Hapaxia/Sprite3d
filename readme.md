@@ -10,6 +10,9 @@ This is a drawable class for use with SFML. It works in a similar way to a SFML 
 
 Since it can rotate and show its back face, the class allows you to supply a secondary texture which it displays instead when the back is visible.
 
+Click this image to see a video that shows what the provided example produces:
+[![Example Video](http://img.youtube.com/vi/EAPDIlVEMKA/0.jpg)](http://www.youtube.com/watch?v=EAPDIlVEMKA)
+
 Note that the texture is still subject to the same mapping problems evident in [SpinningCard](https://github.com/Hapaxia/SpinningCard) where it shows that distorting a quad doesn't interpolate the texture correctly.
 As in [SpinningCard](https://github.com/Hapaxia/SpinningCard), this object is, instead of being created using a quad (or two triangles), created using a triangle fan that uses either four or eight (can be chosen) triangles to display to quad. This helps keep certain areas (centre point and centre of edges or just centre point) of the texture in the correct place but still does not distort the texture perfectly.
 
