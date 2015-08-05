@@ -16,7 +16,11 @@ Click this image to see a video that shows an early test example:
 Note that the texture is still subject to the same mapping problems evident in [SpinningCard](https://github.com/Hapaxia/SpinningCard) where it shows that distorting a quad doesn't interpolate the texture correctly.
 As in [SpinningCard](https://github.com/Hapaxia/SpinningCard), this object can, instead of being created using a quad (or two triangles), be created using more triangles to reduce the size - and therefore the distortions in the textures - of the triangles. Sprite3d creates a triangle strip that alternates across each row of quads. The number of triangles is determined by the Mesh Density and the Subdivision level (see below).
 
+<<<<<<< HEAD
 The texture distortions are more visible depending on the apparent depth of the 3D effect. This amount can be changed by setting its **depth**, which is a _float_. The higher the value, the greater the apparent depth but with more visible texture distortion; the lower the value, the flatter the apparent depth but with less visible texture distortion. The default depth value is 10.
+=======
+The texture distortions are more visible depending on the apparent depth of the 3D effect. This amount can be changed by setting its **depth**, which is a _float_. The higher the value, the greater the depth but with more visible texture distortion; the lower the value, the lessser the depth but with less visible texture distortion. The default depth value is 8 (this is approximately equal to the depth shown in the example video)
+>>>>>>> origin/master
 
 To combat the texture distortion evident when a non-affine transformation (three dimensional rotation is a non-affine transformation as the edges stop being parallel) is applied to a quad, there are three features in Sprite3d that alter the mesh (size and number of triangles).
 
@@ -33,6 +37,7 @@ e.g.:
 1 quad that is subdivided twice becomes 16 quads,
 etc.
 
+<<<<<<< HEAD
 3. *Dynamic Subdivision*
 When enabled, Dynamic Subdivision changes the subdivision level automatically based on the most extreme angle. That is, the greatest rotation angle of pitch and yaw (around the x and y axes respectively). The range of subdivision can be specified; the default range is 1 to 4.
 Example:
@@ -41,6 +46,8 @@ The range is interpolated linearly so (in the case of the default range) from 0°
 
 Note: if you used Sprite3d in its previous form, the interface may be slightly different. The main interface should be compatible and most of the changes to the interface are simply additional methods.
 
+=======
+>>>>>>> origin/master
 There is a [thread dedicated to this class](http://en.sfml-dev.org/forums/index.php?topic=18698) on the SFML wiki forum.
 
 [Hapax's SFML Forum profile](http://en.sfml-dev.org/forums/index.php?action=profile;u=13086)
