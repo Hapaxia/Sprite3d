@@ -4,6 +4,10 @@
 
 For use with [SFML](http://sfml-dev.org) (v2).
 
+**NOTE:  
+Sprite 3D is included in [Selba Ward](https://github.com/Hapaxia/SelbaWard/wiki) where it is currently maintained.  
+See [Sprite 3D's wiki page](https://github.com/Hapaxia/SelbaWard/wiki/Sprite-3D) on Selba Ward.**
+
 Originally planned to be a part of a drawables module in the [Hx](http://github.com/Hapaxia/Hx) library, this follow-up to [SpinningCard](https://github.com/Hapaxia/SpinningCard), which has been completely rewritten from scratch, has been re-routed to a life of independence!
 
 This is a drawable class for use with SFML. It works in a similar way to a SFML standard Sprite (it has many of the same methods plus it's derived from both sf::Transformable and sf::Drawable). This class, however, has the ability to rotate around all three axis (the standard Sprite only rotates around the z axis).
